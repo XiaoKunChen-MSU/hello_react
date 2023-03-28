@@ -51,6 +51,7 @@ function DisplayLogo(){
     <img
       className="libraryLogo"
       src={liblogo.image}
+      alt={liblogo.title}
       style={{
         width: liblogo.width,
         height: liblogo.height
