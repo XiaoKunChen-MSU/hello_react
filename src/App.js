@@ -7,7 +7,7 @@ const liblogo = {
   title: 'library',
   image: logo,
   width: '150',
-  height: '110'
+  height: '100'
 };
 
 const books = [
