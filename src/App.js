@@ -9,7 +9,6 @@ const liblogo = {
   height: '100'
 };
 
-
 const books = [
   { id: 1, title: 'Old Man and the Sea', author: 'Ernest Hemingway', isbn: '9780743237307', isStock: true},
   { id: 2, title: 'Jane Eyre', author: 'Charlotte Brontë', isbn: '9781596881976', isStock: true},
