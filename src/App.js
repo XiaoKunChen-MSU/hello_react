@@ -17,16 +17,27 @@ const books = [
   { id: 4, title: 'Harry Potter and the Philosophers Stone', author: 'Joanne Rowling', isbn: '9780747532743', isStock: true},
 ];
 
-function MagicButton(){
-  const [count, setCount] = useState(0);
-  function doMagic(){
-    setCount(count + 1);
+function Library(){
+  const [myBooks, setMyBooks] = useState([]);
+  async function getBooks(){
+    let { data: books, error } = await supabase
+    .from('books')
+    .select('*')
+  setMyBooks(books);
   }
+  getBooks();
   return (
-    <>
-      <h3>This is a magic button</h3>
-      <button onClick={doMagic}>Magic {count}</button>
-    </>
+    <table>
+      {
+        myBooks.map(b => (
+          <tr>
+            <td>{b.title}</td>
+            <td>{b.author}</td>
+            <td>{b.isbn}</td>
+          </tr>
+        ))
+      }
+    </table>
   );
 }
 
@@ -82,7 +93,7 @@ function App(){
         <Lib />
         <BookShelf />
         <DisplayLogo />
-        <MagicButton />
+        <Library />
       </header>
     </div>
   );
