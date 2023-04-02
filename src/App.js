@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
+import { set } from 'lodash';
 
 const liblogo = {
   title: 'library',
@@ -32,8 +33,8 @@ function Library(){
         myBooks.map(b => (
           <tr>
             <td>{b.title}</td>
-            <td>{b.author}</td>
             <td>{b.isbn}</td>
+            <td>{b.description}</td>
           </tr>
         ))
       }
@@ -45,11 +46,18 @@ function Lib(){
   return (
     <>
     <h1>Welcome to the miniest library in Michigan</h1>
-    <p>Theses are all books in our library: </p>
+    <p>These are all books in our library: </p>
     </>
   );
 }
-  
+
+function BookDetails(){
+  return (
+    <>
+    <h2>These are the deatils of all books:</h2>
+    </>
+  )
+}
 
 function BookShelf() {
   const listBooks = books.map (book =>
@@ -84,7 +92,18 @@ function DisplayLogo(){
   );
 }
 
-
+function PushButton(){
+  const [count, setCount] = useState(0);
+  function workHard(){
+    setCount(count + 1);
+  }
+  return (
+    <>
+    <h5>Push me to update the latest book shelfs</h5>
+    <button onClick={workHard}>You've pushed me {count} times</button>
+    </>
+  )
+}
 
 function App(){
   return (
@@ -92,8 +111,10 @@ function App(){
       <header className="App-header">
         <Lib />
         <BookShelf />
+        <BookDetails />
         <Library />
         <DisplayLogo />
+        <PushButton />
       </header>
     </div>
   );

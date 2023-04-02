@@ -38,13 +38,22 @@
 }
 
 table {
-  background-color: gray;
+  background-color:gray;
   padding: 20px;
   margin: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
+  font-size: 25px;
+  
 }
 
 img {
   width: 250px;
   height: 200px;
+}
+
+button {
+  height: 30px;
+  font-size: 20px;
+  margin: 20px;
+  margin-bottom: 20px;
 }
