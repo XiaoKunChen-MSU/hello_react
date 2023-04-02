@@ -17,6 +17,19 @@ const books = [
   { id: 4, title: 'Harry Potter and the Philosophers Stone', author: 'Joanne Rowling', isbn: '9780747532743', isStock: true},
 ];
 
+function MagicButton(){
+  const [count, setCount] = useState(0);
+  function doMagic(){
+    setCount(count + 1);
+  }
+  return (
+    <>
+      <h3>This is a magic button</h3>
+      <button onClick={doMagic}>Magic {count}</button>
+    </>
+  );
+}
+
 function Lib(){
   return (
     <>
@@ -69,6 +82,7 @@ function App(){
         <Lib />
         <BookShelf />
         <DisplayLogo />
+        <MagicButton />
       </header>
     </div>
   );
