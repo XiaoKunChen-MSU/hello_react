@@ -92,8 +92,8 @@ function App(){
       <header className="App-header">
         <Lib />
         <BookShelf />
-        <DisplayLogo />
         <Library />
+        <DisplayLogo />
       </header>
     </div>
   );
