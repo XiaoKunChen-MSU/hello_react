@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { supabase } from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
-import { set } from 'lodash';
+
 
 const liblogo = {
   title: 'library',
