@@ -29,6 +29,9 @@ function Library(){
   getBooks();
   return (
     <table>
+      <th>Books:</th>
+      <th>ISBN:</th>
+      <th>Description:</th>
       {
         myBooks.map(b => (
           <tr>
