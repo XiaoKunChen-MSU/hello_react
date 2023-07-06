@@ -23,7 +23,7 @@ function Library(){
   async function getBooks(){
     let { data: books,} = await supabase
     .from('books')
-    .select('*')
+    .select('*');
   setMyBooks(books);
   }
   getBooks();
